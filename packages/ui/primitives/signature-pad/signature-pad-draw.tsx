@@ -268,7 +268,7 @@ export const SignaturePadDraw = ({ className, value, onChange, ...props }: Signa
           className="rounded-full p-0 text-[0.688rem] text-muted-foreground/60 ring-offset-background hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           onClick={() => onClearClick()}
         >
-          <Trans>Clear Signature</Trans>
+          <Trans>Limpar Assinatura</Trans>
         </button>
       </div>
 
@@ -279,7 +279,7 @@ export const SignaturePadDraw = ({ className, value, onChange, ...props }: Signa
           })}
         >
           <span className="text-destructive text-xs">
-            <Trans>Signature is too small</Trans>
+            <Trans>Assinatura muito pequena</Trans>
           </span>
         </div>
       )}
@@ -292,13 +292,13 @@ export const SignaturePadDraw = ({ className, value, onChange, ...props }: Signa
         >
           <button
             type="button"
-            title={t`Undo`}
+            title={t`Desfazer`}
             className="rounded-full p-0 text-[0.688rem] text-muted-foreground/60 ring-offset-background hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             onClick={onUndoClick}
           >
             <Undo2 className="h-4 w-4" />
             <span className="sr-only">
-              <Trans>Undo</Trans>
+              <Trans>Desfazer</Trans>
             </span>
           </button>
         </div>

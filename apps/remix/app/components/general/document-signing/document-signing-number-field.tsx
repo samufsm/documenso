@@ -262,7 +262,7 @@ export const DocumentSigningNumberField = ({ field, onSignField, onUnsignField }
 
       <Dialog open={showNumberModal} onOpenChange={setShowNumberModal}>
         <DialogContent>
-          <DialogTitle>{parsedFieldMeta?.label ? parsedFieldMeta?.label : <Trans>Number</Trans>}</DialogTitle>
+          <DialogTitle>{parsedFieldMeta?.label ? parsedFieldMeta?.label : <Trans>Número</Trans>}</DialogTitle>
 
           <div>
             <Input
@@ -318,7 +318,7 @@ export const DocumentSigningNumberField = ({ field, onSignField, onUnsignField }
                   setLocalNumber(parsedFieldMeta?.value ? String(parsedFieldMeta.value) : '');
                 }}
               >
-                <Trans>Cancel</Trans>
+                <Trans>Cancelar</Trans>
               </Button>
 
               <Button
@@ -327,7 +327,7 @@ export const DocumentSigningNumberField = ({ field, onSignField, onUnsignField }
                 disabled={!localNumber || userInputHasErrors}
                 onClick={() => onDialogSignClick()}
               >
-                <Trans>Save</Trans>
+                <Trans>Salvar</Trans>
               </Button>
             </div>
           </DialogFooter>

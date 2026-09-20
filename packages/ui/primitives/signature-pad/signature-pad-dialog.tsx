@@ -1,5 +1,5 @@
 import { parseMessageDescriptor } from '@documenso/lib/utils/i18n';
-import { Dialog, DialogClose, DialogContent, DialogFooter } from '@documenso/ui/primitives/dialog';
+import { Dialog, DialogClose, DialogContent, DialogFooter, DialogTitle } from '@documenso/ui/primitives/dialog';
 
 import type { MessageDescriptor } from '@lingui/core';
 import { Trans, useLingui } from '@lingui/react/macro';
@@ -111,6 +111,10 @@ export const SignaturePadDialog = ({
 
       <Dialog open={showSignatureModal} onOpenChange={disabled ? undefined : setShowSignatureModal}>
         <DialogContent hideClose={true} className="p-6 pt-4">
+          <DialogTitle className="sr-only">
+            <Trans>Assinatura</Trans>
+          </DialogTitle>
+
           <SignaturePad
             id="signature"
             fullName={fullName}
@@ -126,7 +130,7 @@ export const SignaturePadDialog = ({
           <DialogFooter>
             <DialogClose asChild>
               <Button type="button" variant="ghost">
-                <Trans>Cancel</Trans>
+                <Trans>Cancelar</Trans>
               </Button>
             </DialogClose>
 
@@ -138,7 +142,7 @@ export const SignaturePadDialog = ({
                 setShowSignatureModal(false);
               }}
             >
-              {dialogConfirmText ? parseMessageDescriptor(i18n._, dialogConfirmText) : <Trans>Next</Trans>}
+              {dialogConfirmText ? parseMessageDescriptor(i18n._, dialogConfirmText) : <Trans>Avançar</Trans>}
             </Button>
           </DialogFooter>
         </DialogContent>

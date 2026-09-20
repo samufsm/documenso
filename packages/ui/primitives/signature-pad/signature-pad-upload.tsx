@@ -282,16 +282,16 @@ export const SignaturePadUpload = ({ className, value, onChange, ...props }: Sig
       const error = AppError.parseError(err);
 
       const description = match(error.code)
-        .with(SignatureUploadErrorCode.InvalidFileType, () => t`Please upload a valid image file.`)
-        .with(SignatureUploadErrorCode.FileTooLarge, () => t`The image must be smaller than 5MB.`)
+        .with(SignatureUploadErrorCode.InvalidFileType, () => t`Envie um arquivo de imagem válido.`)
+        .with(SignatureUploadErrorCode.FileTooLarge, () => t`A imagem deve ter menos de 5MB.`)
         .with(
           SignatureUploadErrorCode.InvalidImageDimensions,
-          () => t`This image is invalid, please upload a valid image file.`,
+          () => t`Esta imagem é inválida. Envie um arquivo de imagem válido.`,
         )
-        .otherwise(() => t`The image could not be loaded. Please try again.`);
+        .otherwise(() => t`Não foi possível carregar a imagem. Tente novamente.`);
 
       toast({
-        title: t`Unable to upload image`,
+        title: t`Não foi possível carregar a imagem`,
         description,
         variant: 'destructive',
       });
@@ -381,27 +381,27 @@ export const SignaturePadUpload = ({ className, value, onChange, ...props }: Sig
         <div className="absolute top-2 right-2 flex items-center gap-2">
           <button
             type="button"
-            title={t`Zoom out`}
+            title={t`Diminuir zoom`}
             disabled={zoom <= MIN_ZOOM}
             className="rounded-full p-0 text-muted-foreground/60 ring-offset-background hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-40"
             onClick={() => applyZoom($transform.current.zoom / ZOOM_STEP)}
           >
             <ZoomOutIcon className="h-4 w-4" />
             <span className="sr-only">
-              <Trans>Zoom out</Trans>
+              <Trans>Diminuir zoom</Trans>
             </span>
           </button>
 
           <button
             type="button"
-            title={t`Zoom in`}
+            title={t`Aumentar zoom`}
             disabled={zoom >= MAX_ZOOM}
             className="rounded-full p-0 text-muted-foreground/60 ring-offset-background hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-40"
             onClick={() => applyZoom($transform.current.zoom * ZOOM_STEP)}
           >
             <ZoomInIcon className="h-4 w-4" />
             <span className="sr-only">
-              <Trans>Zoom in</Trans>
+              <Trans>Aumentar zoom</Trans>
             </span>
           </button>
         </div>
@@ -414,7 +414,7 @@ export const SignaturePadUpload = ({ className, value, onChange, ...props }: Sig
             className="rounded-full p-0 text-[0.688rem] text-muted-foreground/60 ring-offset-background hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             onClick={() => $fileInput.current?.click()}
           >
-            <Trans>Upload New Image</Trans>
+            <Trans>Enviar Nova Imagem</Trans>
           </button>
         </div>
       )}
@@ -422,7 +422,7 @@ export const SignaturePadUpload = ({ className, value, onChange, ...props }: Sig
       {isSignatureValid === false && (
         <div className="absolute bottom-4 left-4 flex gap-2">
           <span className="text-destructive text-xs">
-            <Trans>Signature is too small</Trans>
+            <Trans>Assinatura muito pequena</Trans>
           </span>
         </div>
       )}
@@ -441,7 +441,7 @@ export const SignaturePadUpload = ({ className, value, onChange, ...props }: Sig
               <div className="flex flex-col items-center">
                 <UploadCloudIcon className="h-8 w-8" />
                 <span className="font-semibold text-lg">
-                  <Trans>Upload Signature</Trans>
+                  <Trans>Carregar Assinatura</Trans>
                 </span>
               </div>
             </div>

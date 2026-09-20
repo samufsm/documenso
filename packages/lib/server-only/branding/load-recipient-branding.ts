@@ -32,7 +32,7 @@ export const loadRecipientBrandingByTeamId = async ({
   ]);
 
   let allowCustomBranding = !billingEnabled || claim?.flags?.embedSigningWhiteLabel === true;
-  const hidePoweredBy = !billingEnabled || claim?.flags?.hidePoweredBy === true;
+  const hidePoweredBy = true;
 
   if (!settings.brandingEnabled) {
     allowCustomBranding = false;

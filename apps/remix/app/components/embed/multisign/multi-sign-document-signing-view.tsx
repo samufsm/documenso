@@ -269,7 +269,7 @@ export const MultiSignDocumentSigningView = ({
                       <div className="embed--DocumentWidgetHeader">
                         <div className="flex items-center justify-between gap-x-2">
                           <h3 className="font-semibold text-foreground text-xl md:text-2xl">
-                            <Trans>Sign document</Trans>
+                            <Trans>Assinar Documento</Trans>
                           </h3>
 
                           <Button variant="outline" className="h-8 w-8 p-0 md:hidden">
@@ -290,7 +290,7 @@ export const MultiSignDocumentSigningView = ({
 
                       <div className="embed--DocumentWidgetContent hidden group-data-[expanded]/document-widget:block md:block">
                         <p className="mt-2 text-muted-foreground text-sm">
-                          <Trans>Sign the document to complete the process.</Trans>
+                          <Trans>Assine o documento para concluir o processo.</Trans>
                         </p>
 
                         <hr className="mt-4 mb-8 border-border" />
@@ -303,7 +303,7 @@ export const MultiSignDocumentSigningView = ({
                             <>
                               <div>
                                 <Label htmlFor="full-name">
-                                  <Trans>Full Name</Trans>
+                                  <Trans>Nome Completo</Trans>
                                 </Label>
 
                                 <Input
@@ -318,7 +318,7 @@ export const MultiSignDocumentSigningView = ({
 
                               <div>
                                 <Label htmlFor="email">
-                                  <Trans>Email</Trans>
+                                  <Trans>E-mail</Trans>
                                 </Label>
 
                                 <Input type="email" id="email" className="mt-2 bg-background" value={email} disabled />
@@ -327,7 +327,7 @@ export const MultiSignDocumentSigningView = ({
                               {hasSignatureField && (
                                 <div>
                                   <Label htmlFor="Signature">
-                                    <Trans>Signature</Trans>
+                                    <Trans>Assinatura</Trans>
                                   </Label>
 
                                   <SignaturePadDialog
@@ -353,11 +353,11 @@ export const MultiSignDocumentSigningView = ({
                       <div className="embed--DocumentWidgetFooter mt-4 hidden w-full grid-cols-2 items-center group-data-[expanded]/document-widget:grid md:grid">
                         {uninsertedFields.length > 0 ? (
                           <Button className="col-start-2" onClick={onNextFieldClick}>
-                            <Trans>Next</Trans>
+                            <Trans>Avançar</Trans>
                           </Button>
                         ) : (
                           <Button className="col-span-2" loading={isSubmitting} onClick={onDocumentComplete}>
-                            <Trans>Complete</Trans>
+                            <Trans>Concluir</Trans>
                           </Button>
                         )}
                       </div>
@@ -368,7 +368,7 @@ export const MultiSignDocumentSigningView = ({
                 {hasDocumentLoaded && showPendingFieldTooltip && pendingFields.length > 0 && (
                   <ElementVisible target={`${PDF_VIEWER_PAGE_SELECTOR}[data-page-number="${pendingFields[0].page}"]`}>
                     <FieldToolTip key={pendingFields[0].id} field={pendingFields[0]} color="warning">
-                      <Trans>Click to insert field</Trans>
+                      <Trans>Clique para inserir campo</Trans>
                     </FieldToolTip>
                   </ElementVisible>
                 )}

@@ -336,7 +336,7 @@ export const EmbedSignDocumentV1ClientPage = ({
               <div className="embed--DocumentWidgetHeader">
                 <div className="flex items-center justify-between gap-x-2">
                   <h3 className="font-semibold text-foreground text-xl md:text-2xl">
-                    {isAssistantMode ? <Trans>Assist with signing</Trans> : <Trans>Sign document</Trans>}
+                    {isAssistantMode ? <Trans>Auxiliar na assinatura</Trans> : <Trans>Assinar Documento</Trans>}
                   </h3>
 
                   {isExpanded ? (
@@ -364,7 +364,7 @@ export const EmbedSignDocumentV1ClientPage = ({
                       loading={isSubmitting}
                       onClick={() => throttledOnCompleteClick()}
                     >
-                      <Trans>Complete</Trans>
+                      <Trans>Concluir</Trans>
                     </Button>
                   )}
                 </div>
@@ -373,9 +373,9 @@ export const EmbedSignDocumentV1ClientPage = ({
               <div className="embed--DocumentWidgetContent hidden group-data-[expanded]/document-widget:block md:block">
                 <p className="mt-2 text-muted-foreground text-sm">
                   {isAssistantMode ? (
-                    <Trans>Help complete the document for other signers.</Trans>
+                    <Trans>Ajude a preencher o documento para outros signatários.</Trans>
                   ) : (
-                    <Trans>Sign the document to complete the process.</Trans>
+                    <Trans>Assine o documento para concluir o processo.</Trans>
                   )}
                 </p>
 
@@ -388,7 +388,7 @@ export const EmbedSignDocumentV1ClientPage = ({
                   {isAssistantMode && (
                     <div>
                       <Label>
-                        <Trans>Signing for</Trans>
+                        <Trans>Assinando por</Trans>
                       </Label>
 
                       <fieldset className="mt-2 rounded-2xl border border-border bg-white p-3 dark:bg-background">
@@ -420,14 +420,14 @@ export const EmbedSignDocumentV1ClientPage = ({
                                         {r.name}
 
                                         {r.id === recipient.id && (
-                                          <span className="ml-2 text-muted-foreground">{_(msg`(You)`)}</span>
+                                          <span className="ml-2 text-muted-foreground">{_(msg`(Você)`)}</span>
                                         )}
                                       </Label>
                                       <p className="text-muted-foreground text-xs">{r.email}</p>
                                     </div>
                                   </div>
                                   <div className="text-muted-foreground text-xs leading-[inherit]">
-                                    {r.fields.length} {r.fields.length === 1 ? 'field' : 'fields'}
+                                    {r.fields.length} {r.fields.length === 1 ? 'campo' : 'campos'}
                                   </div>
                                 </div>
                               </div>
@@ -441,7 +441,7 @@ export const EmbedSignDocumentV1ClientPage = ({
                     <>
                       <div>
                         <Label htmlFor="full-name">
-                          <Trans>Full Name</Trans>
+                          <Trans>Nome Completo</Trans>
                         </Label>
 
                         <Input
@@ -456,7 +456,7 @@ export const EmbedSignDocumentV1ClientPage = ({
 
                       <div>
                         <Label htmlFor="email">
-                          <Trans>Email</Trans>
+                          <Trans>E-mail</Trans>
                         </Label>
 
                         <Input
@@ -472,7 +472,7 @@ export const EmbedSignDocumentV1ClientPage = ({
                       {hasSignatureField && (
                         <div>
                           <Label htmlFor="Signature">
-                            <Trans>Signature</Trans>
+                            <Trans>Assinatura</Trans>
                           </Label>
 
                           <SignaturePadDialog
@@ -498,7 +498,7 @@ export const EmbedSignDocumentV1ClientPage = ({
               <div className="embed--DocumentWidgetFooter mt-4 hidden w-full grid-cols-2 items-center group-data-[expanded]/document-widget:grid md:grid">
                 {pendingFields.length > 0 ? (
                   <Button className="col-start-2" onClick={() => onNextFieldClick()}>
-                    <Trans>Next</Trans>
+                    <Trans>Avançar</Trans>
                   </Button>
                 ) : (
                   <Button
@@ -507,7 +507,7 @@ export const EmbedSignDocumentV1ClientPage = ({
                     loading={isSubmitting}
                     onClick={() => throttledOnCompleteClick()}
                   >
-                    <Trans>Complete</Trans>
+                    <Trans>Concluir</Trans>
                   </Button>
                 )}
               </div>
@@ -517,7 +517,7 @@ export const EmbedSignDocumentV1ClientPage = ({
           {showPendingFieldTooltip && pendingFields.length > 0 && (
             <ElementVisible target={`${PDF_VIEWER_PAGE_SELECTOR}[data-page-number="${pendingFields[0].page}"]`}>
               <FieldToolTip key={pendingFields[0].id} field={pendingFields[0]} color="warning">
-                <Trans>Click to insert field</Trans>
+                <Trans>Clique para inserir campo</Trans>
               </FieldToolTip>
             </ElementVisible>
           )}
@@ -528,15 +528,6 @@ export const EmbedSignDocumentV1ClientPage = ({
           {/* Completed fields */}
           <DocumentReadOnlyFields documentMeta={metadata || undefined} fields={completedFields} />
         </div>
-
-        {!hidePoweredBy && (
-          <div className="fixed bottom-0 left-0 z-40 rounded-tr bg-primary px-2 py-1 font-medium text-primary-foreground text-xs opacity-60 hover:opacity-100">
-            <span>
-              <Trans>Powered by</Trans>
-            </span>
-            <BrandingLogo className="ml-2 inline-block h-[14px]" />
-          </div>
-        )}
       </div>
     </DocumentSigningRecipientProvider>
   );

@@ -397,7 +397,7 @@ export const EmbedDirectTemplateClientPage = ({
             <div>
               <div className="flex items-center justify-between gap-x-2">
                 <h3 className="font-semibold text-foreground text-xl md:text-2xl">
-                  <Trans>Sign document</Trans>
+                  <Trans>Assinar Documento</Trans>
                 </h3>
 
                 {isExpanded ? (
@@ -417,7 +417,7 @@ export const EmbedDirectTemplateClientPage = ({
                     loading={isSubmitting}
                     onClick={() => throttledOnCompleteClick()}
                   >
-                    <Trans>Complete</Trans>
+                    <Trans>Concluir</Trans>
                   </Button>
                 )}
               </div>
@@ -425,7 +425,7 @@ export const EmbedDirectTemplateClientPage = ({
 
             <div className="hidden group-data-[expanded]/document-widget:block md:block">
               <p className="mt-2 text-muted-foreground text-sm">
-                <Trans>Sign the document to complete the process.</Trans>
+                <Trans>Assine o documento para concluir o processo.</Trans>
               </p>
 
               <hr className="mt-4 mb-8 border-border" />
@@ -436,7 +436,7 @@ export const EmbedDirectTemplateClientPage = ({
               <div className="flex flex-1 flex-col gap-y-4">
                 <div>
                   <Label htmlFor="full-name">
-                    <Trans>Full Name</Trans>
+                    <Trans>Nome Completo</Trans>
                   </Label>
 
                   <Input
@@ -451,7 +451,7 @@ export const EmbedDirectTemplateClientPage = ({
 
                 <div>
                   <Label htmlFor="email">
-                    <Trans>Email</Trans>
+                    <Trans>E-mail</Trans>
                   </Label>
 
                   <Input
@@ -474,7 +474,7 @@ export const EmbedDirectTemplateClientPage = ({
                 {hasSignatureField && (
                   <div>
                     <Label htmlFor="Signature">
-                      <Trans>Signature</Trans>
+                      <Trans>Assinatura</Trans>
                     </Label>
 
                     <SignaturePadDialog
@@ -498,7 +498,7 @@ export const EmbedDirectTemplateClientPage = ({
             <div className="mt-4 hidden w-full grid-cols-2 items-center group-data-[expanded]/document-widget:grid md:grid">
               {pendingFields.length > 0 ? (
                 <Button className="col-start-2" onClick={() => onNextFieldClick()}>
-                  <Trans>Next</Trans>
+                  <Trans>Avançar</Trans>
                 </Button>
               ) : (
                 <Button
@@ -507,7 +507,7 @@ export const EmbedDirectTemplateClientPage = ({
                   loading={isSubmitting}
                   onClick={() => throttledOnCompleteClick()}
                 >
-                  <Trans>Complete</Trans>
+                  <Trans>Concluir</Trans>
                 </Button>
               )}
             </div>
@@ -517,7 +517,7 @@ export const EmbedDirectTemplateClientPage = ({
         {showPendingFieldTooltip && pendingFields.length > 0 && (
           <ElementVisible target={`${PDF_VIEWER_PAGE_SELECTOR}[data-page-number="${pendingFields[0].page}"]`}>
             <FieldToolTip key={pendingFields[0].id} field={pendingFields[0]} color="warning">
-              <Trans>Click to insert field</Trans>
+              <Trans>Clique para inserir campo</Trans>
             </FieldToolTip>
           </ElementVisible>
         )}
@@ -530,15 +530,6 @@ export const EmbedDirectTemplateClientPage = ({
           onUnsignField={onUnsignField}
         />
       </div>
-
-      {!hidePoweredBy && (
-        <div className="fixed bottom-0 left-0 z-40 rounded-tr bg-primary px-2 py-1 font-medium text-primary-foreground text-xs opacity-60 hover:opacity-100">
-          <span>
-            <Trans>Powered by</Trans>
-          </span>
-          <BrandingLogo className="ml-2 inline-block h-[14px]" />
-        </div>
-      )}
     </div>
   );
 };

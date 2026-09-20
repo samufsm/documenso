@@ -12,13 +12,13 @@ export const EmbedDocumentCompleted = ({ name, signature }: EmbedDocumentComplet
   return (
     <div className="embed--DocumentCompleted relative mx-auto flex min-h-[100dvh] max-w-screen-lg flex-col items-center justify-center p-6">
       <h3 className="font-semibold text-2xl text-foreground">
-        <Trans>Document Completed!</Trans>
+        <Trans>Documento Concluído!</Trans>
       </h3>
 
       <div className="mt-8 w-full max-w-md">
         <SigningCard3D
           className="mx-auto w-full"
-          name={name || 'Documenso'}
+          name={name || 'Assinado'}
           signature={signature}
           signingCelebrationImage={signingCelebration}
         />
@@ -26,7 +26,7 @@ export const EmbedDocumentCompleted = ({ name, signature }: EmbedDocumentComplet
 
       <p className="mt-8 max-w-[50ch] text-center text-muted-foreground text-sm">
         <Trans>
-          The document is now completed, please follow any instructions provided within the parent application.
+          O documento foi assinado com sucesso. Você já pode fechar esta janela.
         </Trans>
       </p>
     </div>

@@ -142,7 +142,7 @@ export const DocumentSigningInitialsField = ({
 
       {!field.inserted && (
         <DocumentSigningFieldsUninserted>
-          <Trans>Initials</Trans>
+          <Trans>Iniciais</Trans>
         </DocumentSigningFieldsUninserted>
       )}
 

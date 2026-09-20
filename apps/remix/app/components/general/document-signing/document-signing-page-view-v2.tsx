@@ -280,20 +280,6 @@ export const DocumentSigningPageViewV2 = () => {
               <div className="block pb-28 lg:hidden">
                 <DocumentSigningMobileWidget />
               </div>
-
-              {!hidePoweredBy && (
-                <a
-                  href="https://documenso.com"
-                  target="_blank"
-                  className="fixed right-0 bottom-0 z-40 hidden cursor-pointer rounded-tl bg-primary px-2 py-1 font-medium text-primary-foreground text-xs opacity-60 hover:opacity-100 lg:block"
-                  rel="noopener"
-                >
-                  <span>
-                    <Trans>Powered by</Trans>
-                  </span>
-                  <BrandingLogo className="ml-2 inline-block h-[14px]" />
-                </a>
-              )}
             </div>
           </div>
         </div>

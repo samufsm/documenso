@@ -136,7 +136,7 @@ export const DocumentSigningEmailField = ({ field, onSignField, onUnsignField }:
 
       {!field.inserted && (
         <DocumentSigningFieldsUninserted>
-          <Trans>Email</Trans>
+          <Trans>E-mail</Trans>
         </DocumentSigningFieldsUninserted>
       )}
 

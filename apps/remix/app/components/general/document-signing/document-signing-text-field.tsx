@@ -246,7 +246,7 @@ export const DocumentSigningTextField = ({ field, onSignField, onUnsignField }: 
       {isLoading && <DocumentSigningFieldsLoader />}
 
       {!field.inserted && (
-        <DocumentSigningFieldsUninserted>{fieldDisplayName || <Trans>Text</Trans>}</DocumentSigningFieldsUninserted>
+        <DocumentSigningFieldsUninserted>{fieldDisplayName || <Trans>Texto</Trans>}</DocumentSigningFieldsUninserted>
       )}
 
       {field.inserted && (
@@ -257,12 +257,12 @@ export const DocumentSigningTextField = ({ field, onSignField, onUnsignField }: 
 
       <Dialog open={showCustomTextModal} onOpenChange={setShowCustomTextModal}>
         <DialogContent>
-          <DialogTitle>{parsedFieldMeta?.label ? parsedFieldMeta?.label : <Trans>Text</Trans>}</DialogTitle>
+          <DialogTitle>{parsedFieldMeta?.label ? parsedFieldMeta?.label : <Trans>Texto</Trans>}</DialogTitle>
 
           <div>
             <Textarea
               id="custom-text"
-              placeholder={parsedFieldMeta?.placeholder ?? _(msg`Enter your text here`)}
+              placeholder={parsedFieldMeta?.placeholder ?? _(msg`Digite seu texto aqui`)}
               className={cn('mt-2 w-full rounded-md', {
                 'border-2 border-red-300 text-left ring-2 ring-red-200 ring-offset-2 ring-offset-red-200 focus-visible:border-red-400 focus-visible:ring-4 focus-visible:ring-red-200 focus-visible:ring-offset-2 focus-visible:ring-offset-red-200':
                   userInputHasErrors,
@@ -280,8 +280,8 @@ export const DocumentSigningTextField = ({ field, onSignField, onUnsignField }: 
               <div className="text-muted-foreground text-sm">
                 <Plural
                   value={charactersRemaining}
-                  one="1 character remaining"
-                  other={`${charactersRemaining} characters remaining`}
+                  one="1 caractere restante"
+                  other={`${charactersRemaining} caracteres restantes`}
                 />
               </div>
             )}
@@ -299,8 +299,8 @@ export const DocumentSigningTextField = ({ field, onSignField, onUnsignField }: 
                   {charactersRemaining < 0 && (
                     <Plural
                       value={Math.abs(charactersRemaining)}
-                      one="(1 character over)"
-                      other="(# characters over)"
+                      one="(1 caractere excedente)"
+                      other="(# caracteres excedentes)"
                     />
                   )}
                 </p>
@@ -319,7 +319,7 @@ export const DocumentSigningTextField = ({ field, onSignField, onUnsignField }: 
                   setLocalCustomText('');
                 }}
               >
-                <Trans>Cancel</Trans>
+                <Trans>Cancelar</Trans>
               </Button>
 
               <Button
@@ -328,7 +328,7 @@ export const DocumentSigningTextField = ({ field, onSignField, onUnsignField }: 
                 disabled={!localText || userInputHasErrors}
                 onClick={() => onDialogSignClick()}
               >
-                <Trans>Save</Trans>
+                <Trans>Salvar</Trans>
               </Button>
             </div>
           </DialogFooter>

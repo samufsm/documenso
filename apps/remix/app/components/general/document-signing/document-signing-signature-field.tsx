@@ -255,14 +255,14 @@ export const DocumentSigningSignatureField = ({
 
       {state === 'empty' && (
         <p className="font-signature text-[clamp(0.575rem,25cqw,1.2rem)] text-muted-foreground text-xl duration-200 group-hover:text-primary group-hover:text-recipient-green">
-          <Trans>Signature</Trans>
+          <Trans>Assinatura</Trans>
         </p>
       )}
 
       {state === 'signed-image' && signature?.signatureImageAsBase64 && (
         <img
           src={signature.signatureImageAsBase64}
-          alt={`Signature for ${recipient.name}`}
+          alt={`Assinatura de ${recipient.name}`}
           className="h-full w-full object-contain"
         />
       )}
@@ -283,7 +283,7 @@ export const DocumentSigningSignatureField = ({
         <DialogContent>
           <DialogTitle>
             <Trans>
-              Sign as {recipient.name} <div className="h-5 text-muted-foreground">({recipient.email})</div>
+              Assinar como {recipient.name} <div className="h-5 text-muted-foreground">({recipient.email})</div>
             </Trans>
           </DialogTitle>
 
@@ -310,10 +310,10 @@ export const DocumentSigningSignatureField = ({
                   setLocalSignature(null);
                 }}
               >
-                <Trans>Cancel</Trans>
+                <Trans>Cancelar</Trans>
               </Button>
               <Button type="button" className="flex-1" disabled={!localSignature} onClick={() => onDialogSignClick()}>
-                <Trans>Sign</Trans>
+                <Trans>Assinar</Trans>
               </Button>
             </div>
           </DialogFooter>

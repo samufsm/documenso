@@ -174,7 +174,7 @@ export const DocumentSigningNameField = ({ field, onSignField, onUnsignField }: 
 
       {!field.inserted && (
         <DocumentSigningFieldsUninserted>
-          <Trans>Name</Trans>
+          <Trans>Nome</Trans>
         </DocumentSigningFieldsUninserted>
       )}
 
@@ -188,7 +188,7 @@ export const DocumentSigningNameField = ({ field, onSignField, onUnsignField }: 
         <DialogContent>
           <DialogTitle>
             <Trans>
-              Sign as
+              Assinar como
               <div>
                 {recipient.name} <div className="text-foreground">({recipient.email})</div>
               </div>
@@ -197,7 +197,7 @@ export const DocumentSigningNameField = ({ field, onSignField, onUnsignField }: 
 
           <div>
             <Label htmlFor="signature">
-              <Trans>Full Name</Trans>
+              <Trans>Nome Completo</Trans>
             </Label>
 
             <Input
@@ -219,11 +219,11 @@ export const DocumentSigningNameField = ({ field, onSignField, onUnsignField }: 
                   setLocalFullName('');
                 }}
               >
-                <Trans>Cancel</Trans>
+                <Trans>Cancelar</Trans>
               </Button>
 
               <Button type="button" className="flex-1" disabled={!localFullName} onClick={() => onDialogSignClick()}>
-                <Trans>Sign</Trans>
+                <Trans>Assinar</Trans>
               </Button>
             </div>
           </DialogFooter>

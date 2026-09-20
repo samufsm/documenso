@@ -10,19 +10,8 @@ export const DocumentSigningDisclosure = ({ className, ...props }: DocumentSigni
   return (
     <p className={cn('text-muted-foreground text-xs', className)} {...props}>
       <Trans>
-        By proceeding with your electronic signature, you acknowledge and consent that it will be used to sign the given
-        document and holds the same legal validity as a handwritten signature. By completing the electronic signing
-        process, you affirm your understanding and acceptance of these conditions.
+        Ao prosseguir com sua assinatura eletrônica, você reconhece e concorda que ela será utilizada para assinar este documento, possuindo a mesma validade jurídica de uma assinatura manuscrita.
       </Trans>
-      <span className="mt-2 block">
-        <Trans>
-          Read the full{' '}
-          <Link className="text-documenso-700 underline" to="/articles/signature-disclosure" target="_blank">
-            signature disclosure
-          </Link>
-          .
-        </Trans>
-      </span>
     </p>
   );
 };

@@ -146,7 +146,7 @@ export const DocumentSigningFieldContainer = ({
           <TooltipContent className="border-0 bg-orange-300 fill-orange-300 text-orange-900" sideOffset={2}>
             {tooltipText && <p>{tooltipText}</p>}
 
-            <Trans>Remove</Trans>
+            <Trans>Remover</Trans>
             <TooltipArrow />
           </TooltipContent>
         </Tooltip>

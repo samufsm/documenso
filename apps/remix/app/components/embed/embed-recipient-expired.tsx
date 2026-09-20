@@ -25,18 +25,18 @@ export const EmbedRecipientExpired = () => {
   return (
     <div className="embed--RecipientExpired relative mx-auto flex min-h-[100dvh] max-w-screen-lg flex-col items-center justify-center p-6">
       <h3 className="text-center font-bold text-2xl text-foreground">
-        <Trans>Signing Window Expired</Trans>
+        <Trans>Prazo de Assinatura Expirado</Trans>
       </h3>
 
       <div className="mt-8 max-w-[50ch] text-center">
         <p className="text-muted-foreground text-sm">
           <Trans>
-            Your signing window for this document has expired. Please contact the sender for a new invitation.
+            O prazo para assinatura deste documento expirou. Por favor, solicite um novo link ao remetente.
           </Trans>
         </p>
 
         <p className="mt-4 text-muted-foreground text-sm">
-          <Trans>Please check with the parent application for more information.</Trans>
+          <Trans>Consulte o sistema principal para mais informações.</Trans>
         </p>
       </div>
     </div>

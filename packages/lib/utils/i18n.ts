@@ -21,17 +21,29 @@ export async function dynamicActivate(locale: string) {
 }
 
 const parseLanguageFromLocale = (locale: string): SupportedLanguageCodes | null => {
-  const [language, _country] = locale.split('-');
-
-  const foundSupportedLanguage = APP_I18N_OPTIONS.supportedLangs.find(
-    (lang): lang is SupportedLanguageCodes => lang === language,
-  );
-
-  if (!foundSupportedLanguage) {
+  if (!locale) {
     return null;
   }
 
-  return foundSupportedLanguage;
+  const trimmed = locale.trim().split(';')[0];
+
+  const directMatch = APP_I18N_OPTIONS.supportedLangs.find(
+    (lang): lang is SupportedLanguageCodes => lang.toLowerCase() === trimmed.toLowerCase(),
+  );
+  if (directMatch) {
+    return directMatch;
+  }
+
+  const [language] = trimmed.split('-');
+  if (language.toLowerCase() === 'pt') {
+    return 'pt-BR';
+  }
+
+  const foundSupportedLanguage = APP_I18N_OPTIONS.supportedLangs.find(
+    (lang): lang is SupportedLanguageCodes => lang.toLowerCase() === language.toLowerCase(),
+  );
+
+  return foundSupportedLanguage || null;
 };
 
 /**

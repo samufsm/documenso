@@ -7,7 +7,7 @@ export const EmbedClientLoading = () => {
       <Loader className="mr-2 h-4 w-4 animate-spin" />
 
       <span>
-        <Trans>Loading...</Trans>
+        <Trans>Carregando...</Trans>
       </span>
     </div>
   );
