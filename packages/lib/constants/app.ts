@@ -49,7 +49,7 @@ export const NEXT_PRIVATE_USE_LEGACY_SIGNING_SUBFILTER = () =>
   env('NEXT_PRIVATE_USE_LEGACY_SIGNING_SUBFILTER') === 'true';
 
 export const NEXT_PRIVATE_INTERNAL_WEBAPP_URL = () =>
-  env('NEXT_PRIVATE_INTERNAL_WEBAPP_URL') ?? NEXT_PUBLIC_WEBAPP_URL();
+  env('NEXT_PRIVATE_INTERNAL_WEBAPP_URL') ?? (process.env.PORT ? `http://127.0.0.1:${process.env.PORT}` : 'http://127.0.0.1:3000');
 
 export const IS_BILLING_ENABLED = () => env('NEXT_PUBLIC_FEATURE_BILLING_ENABLED') === 'true';
 
